@@ -96,9 +96,8 @@ class Garage {
         if (!(newVehicle instanceof Vehicle)) {  //checks to see if newVehicle is NOT an instance of the class Vehicle. 
             return "Only vehicles are allowed in here!"
         }
-        this.push(newVehicle) {
-            return "Vehicle added!"
-        }    
+        this.push(newVehicle) 
+            return "Vehicle added!"    
     }
 }
               
