@@ -36,7 +36,12 @@ myFirstCar.toString(); // "The vehicle is a Toyota Corolla from 2005."
 myFirstCar.honk();     // "Beep."
 myFirstCar.numWheels;  // 4 */
 
-
+class Car extends Vehicle {
+    constructor (make, model, year) {
+        super(make, model, year);
+        this.numWheels = 4;
+    }    
+}
 
 /* Part Three
 Create a class for a Motorcycle. This class should inherit from Vehicle and each motorcycle instance should have a property called numWheels which has a value of 2. It should also have a revEngine method which returns “VROOM!!!”
@@ -50,6 +55,15 @@ myFirstMotorcycle.honk();     // "Beep."
 myFirstMotorcycle.revEngine(); // "VROOM!!!"
 myFirstMotorcycle.numWheels;  // 2 */
 
+class Motorcycle extends Vehicle {
+    constructor(make, model, year) {
+        super(make, model, year);
+        this.numWheels = 2;   
+    }
+    revEngine(){
+        return "VROOM!!!";
+    }
+}
 
 /* Part Four
 Create a class for a Garage. It should have a property called vehicles which will store an array of vehicles, and a property called capacity which is a number indicating how many vehicles will fit in the garage. When you create a garage, vehicles will always be empty; you only need to provide the capacity.
@@ -68,3 +82,26 @@ garage.vehicles; // [Car, Motorcycle]
 
 garage.add(new Motorcycle("Honda", "Nighthawk", 2001));
 // "Sorry, we're full." */
+
+class Garage {
+    constructor (capacity) {
+        this.vehicles = []; //empty array for this instance. 
+        this.capacity = capacity; //user capacity input
+    }
+    
+    add(newVehicle) {
+        if (this.vehicles.length >= this.capacity) {
+           return "Sorry, we're full!";
+        }
+        if (!(newVehicle instanceof Vehicle)) {  //checks to see if newVehicle is NOT an instance of the class Vehicle. 
+            return "Only vehicles are allowed in here!"
+        }
+        this.push(newVehicle) {
+            return "Vehicle added!"
+        }    
+    }
+}
+              
+              
+              
+              
